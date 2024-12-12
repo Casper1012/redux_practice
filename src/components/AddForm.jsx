@@ -44,11 +44,13 @@ const AddForm = ({todos}) => {
         const {data} = await axios.post("http://localhost:4000/tasks", {
             title: task,
         });
+        console.log("Hellp",data);
         dispatch(addTask(data));
     };
 
     const handleDelete = async (id) => {
         const res = await axios.delete(`http://localhost:4000/tasks/${id}`);
+
         dispatch(deleteTasks(id));
     };
 
@@ -67,8 +69,8 @@ const AddForm = ({todos}) => {
             </form>
 
             {todos.map(({ id, title }) => (
-                <TodoItem>
-                    <li key={id}>
+                <TodoItem key={id}>
+                    <li>
                         {title}
                         <Link to={`/update/${id}`}>
                             {" "}

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 // sth new is being tested here
@@ -19,6 +18,7 @@ const App = () => {
     async function fetchData() {
 
       const { data } = await axios.get("http://localhost:4000/tasks");
+
       dispatch(fetchTasks(data));
     }
     fetchData();
@@ -33,7 +33,7 @@ const App = () => {
                 <AddForm todos={todos}/>
             </Route>
             <Route  path="/update/:id">
-              <UpdateForm />
+                <UpdateForm />
             </Route>
           </Switch>
         </Container>
