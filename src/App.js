@@ -13,7 +13,7 @@ import { fetchTasks } from "./redux/todo/action";
 const App = () => {
   const dispatch = useDispatch();
   const todos = useSelector((state) => state.todo.todos);
-  
+
   useEffect(() => {
     async function fetchData() {
 
@@ -26,18 +26,18 @@ const App = () => {
 
   return (
 
-      <BrowserRouter>
-        <Container>
-          <Switch>
-            <Route exact path="/">
-                <AddForm todos={todos}/>
-            </Route>
-            <Route  path="/update/:id">
-                <UpdateForm />
-            </Route>
-          </Switch>
-        </Container>
-      </BrowserRouter>
+    <BrowserRouter>
+      <Container>
+        <Switch>
+          <Route exact path="/">
+            <AddForm todos={todos} />
+          </Route>
+          <Route path="/update/:id">
+            <UpdateForm />
+          </Route>
+        </Switch>
+      </Container>
+    </BrowserRouter>
   );
 };
 

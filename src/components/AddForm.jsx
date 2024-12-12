@@ -30,7 +30,7 @@ const TodoItem = styled.div`
   }
 `;
 
-const AddForm = ({todos}) => {
+const AddForm = ({ todos }) => {
     const [task, setTask] = useState("");
     const dispatch = useDispatch();
 
@@ -41,10 +41,9 @@ const AddForm = ({todos}) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const {data} = await axios.post("http://localhost:4000/tasks", {
+        const { data } = await axios.post("http://localhost:4000/tasks", {
             title: task,
         });
-        console.log("Hellp",data);
         dispatch(addTask(data));
     };
 

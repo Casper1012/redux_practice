@@ -23,6 +23,7 @@ const todoReducer = (state = INITIAL_STATE, action) => {
             };
 
         default:
+            console.log("when I try to update...")
             return state;
     }
 };
